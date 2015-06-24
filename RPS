@@ -1,0 +1,49 @@
+import random
+answer = "yes"
+rock = Rock = R = r = 1
+scissors = Scissors = S = s = 2
+paper = Paper = P = p = 3
+
+print("You are playing Rock Paper Scisscors")
+score = [0,0]
+flag = 0
+while answer == "yes":
+    Words = ["rock", "paper", "scissors"]
+    word = random.choice(Words)
+    
+    print("Enter your choice:")
+    choice = raw_input('->')
+    if choice == 'r' or choice == 'R' or choice == 'Rock' or choice == 'rock' or choice == '1':
+        print
+    elif choice == 'S' or choice == 's' or choice == 'Scissors' or choice == 'scissors' or choice == '2':
+        print
+    elif choice == 'P' or choice == 'p' or choice == 'Paper' or choice == 'paper' or choice == '3':
+        print
+    else:
+        print('That\'s not an option in this game :)')
+        print('Try again:')
+        continue
+
+    print word
+    if word == choice:
+        print('It\'s a draw!')
+        score[0] = score[0] + 1
+        score[1] = score[1] + 1
+    elif (word == "rock" and choice == "paper") or (word == "paper" and choice == "scissors") or (word == "scissors" and choice == "rock"):
+        print('You win!')
+        score[0] = score[0] + 1
+    else:
+        print('You lose...')
+        score[1] = score[1] + 1
+
+    while 5 == 5:
+        answer = raw_input('Play another round?')
+        if answer == 'y' or answer == 'Y' or answer == 'yes' or answer == 'Yes' or answer == 'ye' or answer == 'Ye' or answer == 'sure' or answer == 'Sure':
+            print ("Current score: You - score[0], Computer -  score[1]")
+            flag = 0
+            answer = "yes"
+            break 
+        elif answer == 'n' or answer == 'N' or answer == 'no' or answer == 'No' or answer == 'nah' or answer == 'Nah':
+            print ("Thanks for playing! Final score: You - score[0], Computer -  score[1]")
+            flag = 1
+            break
